@@ -16,6 +16,7 @@ import Model.Values.Value;
 import Repository.IRepository;
 import Repository.Repository;
 
+import java.io.BufferedReader;
 import java.util.Scanner;
 
 public class Ui {
@@ -56,11 +57,12 @@ public class Ui {
                 String option = reader.nextLine();
                 MyIStack<IStmt> stack = new MyStack<>();
                 MyIDictionary<String, Value> symTable = new MyDictionary<>();
+                MyIDictionary<String, BufferedReader> fileTable = new MyDictionary<>();
                 MyIList<Value> out = new MyList<>();
                 ProgramState prg = null;
                 if (option.equals("1")) {
                     IStmt ogProgram1 = new CompStmt(new VarDeclStmt("v", new IntType()), new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(2))), new PrintStmt(new VarExp("v"))));
-                    prg = new ProgramState(stack, symTable, out, ogProgram1);
+                    prg = new ProgramState(stack, symTable, out, fileTable, ogProgram1);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -76,7 +78,7 @@ public class Ui {
                                     new ArithmeticExp(new ValueExp(new IntValue(3)), new ValueExp(new IntValue(5)), "*"), "+")),
                                     new CompStmt(new AssignStmt("b",new ArithmeticExp(new VarExp("a"),
                                             new ValueExp(new IntValue(1)), "+")), new PrintStmt(new VarExp("b"))))));
-                    prg = new ProgramState(stack, symTable, out, ogProgram2);
+                    prg = new ProgramState(stack, symTable, out, fileTable, ogProgram2);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -92,7 +94,7 @@ public class Ui {
                                     new CompStmt(new IfStmt(new VarExp("a"), new AssignStmt("v", new ValueExp(
                                             new IntValue(2))), new AssignStmt("v", new ValueExp(new IntValue(3)))), new PrintStmt(
                                             new VarExp("v"))))));
-                    prg= new ProgramState(stack, symTable, out, ogProgram3);
+                    prg= new ProgramState(stack, symTable, out, fileTable, ogProgram3);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -114,7 +116,7 @@ public class Ui {
     }
 
     private void runAllStep(ProgramState prg) {
-        IRepository repo = new Repository();
+        IRepository repo = new Repository("file.txt");
         serv = new Service(repo);
         serv.addProgramState(prg);
         serv.allStep();
@@ -122,7 +124,7 @@ public class Ui {
 
     private void runOneStep(ProgramState prg) {
         MyIStack<IStmt> stack = prg.getStk();
-        IRepository repo = new Repository();
+        IRepository repo = new Repository("file.txt");
         serv = new Service(repo);
         serv.addProgramState(prg);
         boolean stop = false;

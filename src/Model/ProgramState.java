@@ -6,16 +6,20 @@ import Model.ADTstructures.MyIStack;
 import Model.Statements.*;
 import Model.Values.Value;
 
+import java.io.BufferedReader;
+
 public class ProgramState {
     MyIStack<IStmt> exeStack;
     MyIDictionary<String, Value> symTable;
     MyIList<Value> out;
     IStmt originalProgram;
+    MyIDictionary<String, BufferedReader> fileTable;
 
-    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, IStmt prg) {
+    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, IStmt prg) {
         exeStack = stack;
         symTable = symTbl;
         this.out = out;
+        this.fileTable = fileTable;
         originalProgram = (IStmt) prg.clone();
         stack.push(prg);
     }
