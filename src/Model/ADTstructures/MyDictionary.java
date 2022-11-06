@@ -39,4 +39,9 @@ public class MyDictionary<T, T1> implements MyIDictionary<T, T1> {
             buff.append("\t   ").append(id).append(" -> ").append(this.lookup(id)).append("\n");
         return buff.toString();
     }
+
+    @Override
+    public void delete(T id) {
+        dict.remove(id);
+    }
 }

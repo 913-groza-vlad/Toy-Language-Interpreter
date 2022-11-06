@@ -56,6 +56,14 @@ public class ProgramState {
         this.originalProgram = originalProgram;
     }
 
+    public MyIDictionary<String, BufferedReader> getFileTable() {
+        return this.fileTable;
+    }
+
+    public void setFileTable(MyIDictionary<String, BufferedReader> fileTable) {
+        this.fileTable = fileTable;
+    }
+
     @Override
     public String toString() {
         return "--------------------\n\t- EXE STACK -\n" +  exeStack.toString() + "--------------------\n\t- SYM TABLE -\n" + symTable.toString() + "--------------------\n\t  - OUT -\n" + out.toString() + "--------------------\n";

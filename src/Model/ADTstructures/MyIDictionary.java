@@ -13,4 +13,6 @@ public interface MyIDictionary<T, T1> {
     void update(T id, T1 val);
 
     Set<T> keys();
+
+    void delete(T id);
 }

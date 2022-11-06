@@ -24,4 +24,11 @@ public class IntValue implements Value{
     public String toString() {
         return String.valueOf(val);
     }
+
+    @Override
+    public boolean equals(Value another) {
+        if (another instanceof IntValue)
+            return true;
+        return false;
+    }
 }

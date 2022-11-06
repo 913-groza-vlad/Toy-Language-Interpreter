@@ -24,4 +24,11 @@ public class BoolValue implements Value{
     public String toString() {
         return Boolean.toString(val);
     }
+
+    @Override
+    public boolean equals(Value another) {
+        if (another instanceof BoolValue)
+            return true;
+        return false;
+    }
 }
