@@ -4,14 +4,17 @@ import Controller.Service;
 import Model.ADTstructures.*;
 import Model.Exceptions.MyException;
 import Model.Expressions.ArithmeticExp;
+import Model.Expressions.RelationalExp;
 import Model.Expressions.ValueExp;
 import Model.Expressions.VarExp;
 import Model.ProgramState;
 import Model.Statements.*;
 import Model.Types.BoolType;
 import Model.Types.IntType;
+import Model.Types.StringType;
 import Model.Values.BoolValue;
 import Model.Values.IntValue;
+import Model.Values.StringValue;
 import Model.Values.Value;
 import Repository.IRepository;
 import Repository.Repository;
@@ -94,7 +97,23 @@ public class Ui {
                                     new CompStmt(new IfStmt(new VarExp("a"), new AssignStmt("v", new ValueExp(
                                             new IntValue(2))), new AssignStmt("v", new ValueExp(new IntValue(3)))), new PrintStmt(
                                             new VarExp("v"))))));
-                    prg= new ProgramState(stack, symTable, out, fileTable, ogProgram3);
+                    prg = new ProgramState(stack, symTable, out, fileTable, ogProgram3);
+                    displayOptions();
+                    String choice = reader.nextLine();
+                    if (choice.equals("1"))
+                        runOneStep(prg);
+                    else if (choice.equals("2"))
+                        runAllStep(prg);
+                    else
+                        System.out.println("Invalid option");
+                }
+                else if (option.equals("4")) {
+                    IStmt ogProgram4 = new CompStmt(new VarDeclStmt("varf", new StringType()), new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("test.in"))),
+                            new CompStmt(new OpenRFile(new VarExp("varf")),
+                                    new CompStmt(new VarDeclStmt("varc", new IntType()), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
+                                            new CompStmt(new PrintStmt(new VarExp("varc")), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
+                                                    new CompStmt(new PrintStmt(new VarExp("varc")), new CloseRFile(new VarExp("varf"))))))))));
+                    prg = new ProgramState(stack, symTable, out, fileTable, ogProgram4);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -119,7 +138,12 @@ public class Ui {
         IRepository repo = new Repository("file.txt");
         serv = new Service(repo);
         serv.addProgramState(prg);
-        serv.allStep();
+        try {
+            serv.allStep();
+        }
+        catch (MyException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     private void runOneStep(ProgramState prg) {
@@ -130,7 +154,7 @@ public class Ui {
         boolean stop = false;
         while (!stack.isEmpty() && !stop) {
             System.out.println("\n\t1 -> Continue execution");
-            System.out.println("\t2 -> End execution\n");
+            System.out.println("\t0 -> End execution\n");
             System.out.print("\t>>> ");
             String choice = reader.nextLine();
             if (choice.equals("1")) {
@@ -141,11 +165,71 @@ public class Ui {
                 }
                 serv.displayState(prg);
             }
-            else if (choice.equals("2"))
+            else if (choice.equals("0"))
                 stop = true;
             else
                 System.out.println("Invalid option");
         }
     }
 
+    private Service createRunExample(IStmt program, String logFile) {
+        MyIStack<IStmt> stack = new MyStack<>();
+        MyIDictionary<String, Value> symTable = new MyDictionary<>();
+        MyIDictionary<String, BufferedReader> fileTable = new MyDictionary<>();
+        MyIList<Value> out = new MyList<>();
+        ProgramState prg1 = new ProgramState(stack, symTable, out, fileTable, program);
+        IRepository repo1 = new Repository(logFile);
+        repo1.addPrg(prg1);
+        return new Service(repo1);
+    }
+
+    public void mainStart() {
+
+        // int v; v=2; Print(v)
+        IStmt ogProgram1 = new CompStmt(new VarDeclStmt("v", new IntType()), new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(2))), new PrintStmt(new VarExp("v"))));
+        Service ctr1 = createRunExample(ogProgram1, "log1.txt");
+
+        // int a; int b; a=2+3*5; b=a+1; Print(b)")
+        IStmt ogProgram2 = new CompStmt(new VarDeclStmt("a", new IntType()), new CompStmt(new VarDeclStmt("b", new IntType()),
+                new CompStmt(new AssignStmt("a", new ArithmeticExp(new ValueExp(new IntValue(2)),
+                        new ArithmeticExp(new ValueExp(new IntValue(3)), new ValueExp(new IntValue(5)), "*"), "+")),
+                        new CompStmt(new AssignStmt("b",new ArithmeticExp(new VarExp("a"),
+                                new ValueExp(new IntValue(1)), "+")), new PrintStmt(new VarExp("b"))))));
+        Service ctr2 = createRunExample(ogProgram2, "log2.txt");
+
+        // bool a; int v; a=true; (If a Then v=2 Else v=3); Print(v)
+        IStmt ogProgram3 = new CompStmt(new VarDeclStmt("a", new BoolType()), new CompStmt(new VarDeclStmt("v", new IntType()),
+                new CompStmt(new AssignStmt("a", new ValueExp(new BoolValue(true))),
+                        new CompStmt(new IfStmt(new VarExp("a"), new AssignStmt("v", new ValueExp(
+                                new IntValue(2))), new AssignStmt("v", new ValueExp(new IntValue(3)))), new PrintStmt(
+                                new VarExp("v"))))));
+        Service ctr3 = createRunExample(ogProgram3, "log3.txt");
+
+        // string varf; varf="test.in"; openRFile(varf); int varc; readFile(varf,varc);print(varc);
+        // readFile(varf,varc);print(varc); closeRFile(varf)
+        IStmt ogProgram4 = new CompStmt(new VarDeclStmt("varf", new StringType()), new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("test.in"))),
+                new CompStmt(new OpenRFile(new VarExp("varf")),
+                        new CompStmt(new VarDeclStmt("varc", new IntType()), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
+                                new CompStmt(new PrintStmt(new VarExp("varc")), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
+                                        new CompStmt(new PrintStmt(new VarExp("varc")), new CloseRFile(new VarExp("varf"))))))))));
+        Service ctr4 = createRunExample(ogProgram4, "log4.txt");
+
+        // int a; int b; string file; file="ex5.in"; openRFile(file); readFile(file, a)
+        // readFile(file, b); (If a < b Then Print(a) Else Print(b); closeRFile(file)
+        IStmt ogProgram5 = new CompStmt(new VarDeclStmt("a", new IntType()), new CompStmt(new VarDeclStmt("b", new IntType()),
+                new CompStmt(new VarDeclStmt("file", new StringType()), new CompStmt(new AssignStmt("file", new ValueExp(new StringValue("ex5.in"))),
+                        new CompStmt(new OpenRFile(new VarExp("file")), new CompStmt(new ReadFile(new VarExp("file"), "a"),
+                                new CompStmt(new ReadFile(new VarExp("file"), "b"), new CompStmt(new IfStmt(new RelationalExp(new VarExp("a"), new VarExp("b"), "<"),
+                                        new PrintStmt(new VarExp("a")), new PrintStmt(new VarExp("b"))), new CloseRFile(new VarExp("file"))))))))));
+        Service ctr5 = createRunExample(ogProgram5, "log5.txt");
+
+        TextMenu textMenu = new TextMenu();
+        textMenu.addCommand(new ExitCommand("0", "exit"));
+        textMenu.addCommand(new RunExample("1", ogProgram1.toString(), ctr1));
+        textMenu.addCommand(new RunExample("2", ogProgram2.toString(), ctr2));
+        textMenu.addCommand(new RunExample("3", ogProgram3.toString(), ctr3));
+        textMenu.addCommand(new RunExample("4", ogProgram4.toString(), ctr4));
+        textMenu.addCommand(new RunExample("5", ogProgram5.toString(), ctr5));
+        textMenu.show();
+    }
 }

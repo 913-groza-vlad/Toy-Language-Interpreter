@@ -54,7 +54,7 @@ public class CloseRFile implements IStmt {
     }
 
     public String toString() {
-        return "Close Read File(" + exp + ")";
+        return "CloseReadFile(" + exp + ")";
     }
 
 }

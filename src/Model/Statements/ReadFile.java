@@ -63,6 +63,6 @@ public class ReadFile implements IStmt {
     }
 
     public String toString() {
-        return String.format("Read File(%s, %s)" ,exp, varName);
+        return String.format("ReadFile(%s, %s)" ,exp, varName);
     }
 }

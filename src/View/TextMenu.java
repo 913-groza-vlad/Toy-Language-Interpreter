@@ -16,10 +16,12 @@ public class TextMenu {
     }
 
     private void printMenu() {
+        System.out.println();
         for(Command com : commands.values()){
             String line = String.format("%4s : %s", com.getKey(), com.getDescription());
             System.out.println(line);
         }
+        System.out.println();
     }
 
     public void show() {

@@ -2,6 +2,7 @@ package Model.ADTstructures;
 
 import Model.Values.Value;
 
+import java.io.BufferedReader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -32,13 +33,13 @@ public class MyDictionary<T, T1> implements MyIDictionary<T, T1> {
         return dict.keySet();
     }
 
-    @Override
+    /*@Override
     public String toString() {
         StringBuilder buff = new StringBuilder();
         for (T id : this.keys())
             buff.append("\t   ").append(id).append(" -> ").append(this.lookup(id)).append("\n");
         return buff.toString();
-    }
+    } */
 
     @Override
     public void delete(T id) {

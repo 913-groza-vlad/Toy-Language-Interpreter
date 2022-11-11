@@ -12,10 +12,8 @@ import Model.Values.StringValue;
 import Model.Values.Value;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.Buffer;
 
 public class OpenRFile implements IStmt {
     private Exp exp;
@@ -57,6 +55,6 @@ public class OpenRFile implements IStmt {
     }
 
     public String toString() {
-        return "Open Read File(" + exp + ")";
+        return "OpenReadFile(" + exp + ")";
     }
 }

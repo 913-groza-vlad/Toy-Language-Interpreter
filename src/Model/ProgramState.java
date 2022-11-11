@@ -64,8 +64,20 @@ public class ProgramState {
         this.fileTable = fileTable;
     }
 
+    public String symTableToString() {
+        StringBuilder buff = new StringBuilder();
+        for (String id : symTable.keys())
+            buff.append("\t   ").append(id).append(" -> ").append(symTable.lookup(id)).append("\n");
+        return buff.toString();
+    }
+    public String fileTableToString() {
+        StringBuilder buff = new StringBuilder();
+        for (String id : fileTable.keys())
+            buff.append("\t").append(id).append("\n");
+        return buff.toString();
+    }
     @Override
     public String toString() {
-        return "--------------------\n\t- EXE STACK -\n" +  exeStack.toString() + "--------------------\n\t- SYM TABLE -\n" + symTable.toString() + "--------------------\n\t  - OUT -\n" + out.toString() + "--------------------\n";
+        return "--------------------\n\t- EXE STACK -\n" +  exeStack.toString() + "--------------------\n\t- SYM TABLE -\n" + symTableToString() + "--------------------\n\t  - OUT -\n" + out.toString() + "--------------------\n    - FILE TABLE -\n" + fileTableToString() + "--------------------\n";
     }
 }

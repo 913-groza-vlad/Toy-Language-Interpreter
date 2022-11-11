@@ -1,6 +1,7 @@
 package View;
 
 import Controller.Service;
+import Model.Exceptions.MyException;
 
 public class RunExample extends Command {
 
@@ -13,6 +14,11 @@ public class RunExample extends Command {
 
     @Override
     public void execute() {
-        serv.allStep();
+        try {
+            serv.allStep();
+        }
+        catch (MyException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

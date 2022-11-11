@@ -23,14 +23,14 @@ public class Service {
         return crtStmt.execute(state);
     }
 
-    public void allStep() {
+    public void allStep() throws MyException{
         ProgramState prg = repo.getCrtPrg();
         displayState(prg);
         try {
             repo.logPrgStateExec();
         }
         catch (IOException e) {
-            System.out.println(e.getMessage());
+            throw new MyException("Error on saving the content in the text file");
         }
         while (!prg.getStk().isEmpty()) {
             try {
@@ -38,7 +38,7 @@ public class Service {
                 repo.logPrgStateExec();
             }
             catch (MyException | IOException e) {
-                System.out.println(e.getMessage());
+                throw new MyException("Error on saving the content in the text file");
             }
             displayState(prg);
         }
