@@ -33,8 +33,17 @@ public class Repository implements IRepository{
 
     @Override
     public void logPrgStateExec() throws IOException {
-        PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
-        logFile.println(getCrtPrg().toString());
-        logFile.close();
+        PrintWriter logFile = null;
+        try {
+            logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
+            logFile.println(getCrtPrg().toString());
+        }
+        catch (IOException e) {
+            throw new IOException(e.getMessage());
+        }
+        finally {
+            if (logFile != null)
+                logFile.close();
+        }
     }
 }

@@ -7,6 +7,7 @@ import Model.Statements.IStmt;
 import Repository.IRepository;
 
 import java.io.IOException;
+import java.util.List;
 
 public class Service {
     private final IRepository repo;
@@ -50,6 +51,10 @@ public class Service {
 
     public void addProgramState(ProgramState program) {
         this.repo.addPrg(program);
+    }
+
+    public IRepository getPrograms() {
+        return repo;
     }
 
 }
