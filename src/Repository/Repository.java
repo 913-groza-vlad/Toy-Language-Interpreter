@@ -1,6 +1,5 @@
 package Repository;
 
-import Model.Exceptions.MyException;
 import Model.ProgramState;
 
 import java.io.*;

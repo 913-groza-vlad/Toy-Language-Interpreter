@@ -7,7 +7,6 @@ import Model.Statements.IStmt;
 import Repository.IRepository;
 
 import java.io.IOException;
-import java.util.List;
 
 public class Service {
     private final IRepository repo;

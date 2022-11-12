@@ -5,8 +5,6 @@ import Model.ADTstructures.MyIStack;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Statements.IStmt;
-import Repository.IRepository;
-import Repository.Repository;
 
 import java.util.Scanner;
 
