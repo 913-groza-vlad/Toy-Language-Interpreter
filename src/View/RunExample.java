@@ -6,6 +6,7 @@ import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Statements.IStmt;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class RunExample extends Command {
@@ -37,6 +38,11 @@ public class RunExample extends Command {
                     try {
                         serv.oneStep(prg);
                     } catch (MyException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    try {
+                        serv.getPrograms().logPrgStateExec();
+                    } catch (IOException e) {
                         System.out.println(e.getMessage());
                     }
                     serv.displayState(prg);

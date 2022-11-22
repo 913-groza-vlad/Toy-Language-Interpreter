@@ -1,8 +1,6 @@
 package Model;
 
-import Model.ADTstructures.MyIDictionary;
-import Model.ADTstructures.MyIList;
-import Model.ADTstructures.MyIStack;
+import Model.ADTstructures.*;
 import Model.Statements.*;
 import Model.Values.Value;
 
@@ -14,12 +12,14 @@ public class ProgramState {
     MyIList<Value> out;
     IStmt originalProgram;
     MyIDictionary<String, BufferedReader> fileTable;
+    MyIHeap heapTable;
 
-    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, IStmt prg) {
+    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyHeap heapTable, IStmt prg) {
         exeStack = stack;
         symTable = symTbl;
         this.out = out;
         this.fileTable = fileTable;
+        this.heapTable = heapTable;
         originalProgram = (IStmt) prg.clone();
         stack.push(prg);
     }
@@ -62,6 +62,14 @@ public class ProgramState {
 
     public void setFileTable(MyIDictionary<String, BufferedReader> fileTable) {
         this.fileTable = fileTable;
+    }
+
+    public MyIHeap getHeap() {
+        return this.heapTable;
+    }
+
+    public void setHeapTable(MyIHeap heap) {
+        heapTable = heap;
     }
 
     public String symTableToString() {

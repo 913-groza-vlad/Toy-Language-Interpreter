@@ -35,11 +35,11 @@ public class OpenRFile implements IStmt {
         BufferedReader buffer;
         try {
             buffer = new BufferedReader(new FileReader(fileName.getVal()));
+            fileTable.update(fileName.getVal(), buffer);
         }
         catch (IOException e) {
             throw new FileException("File not found or error on opening file " + fileName);
         }
-        fileTable.update(fileName.getVal(), buffer);
 
         return state;
     }
