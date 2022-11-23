@@ -1,6 +1,7 @@
 package Model.Statements;
 
 import Model.ADTstructures.MyIDictionary;
+import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.*;
 import Model.Expressions.Exp;
 import Model.ProgramState;
@@ -27,11 +28,12 @@ public class ReadFile implements IStmt {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         MyIDictionary<String, Value> symTable = state.getSymTable();
+        MyIHeap heapTable = state.getHeap();
         if (!symTable.isDefined(varName))
             throw new StmtExecException(varName + " is not defined yet");
         if(!symTable.lookup(varName).getType().equals(new IntType()))
             throw new TypeException(varName + " is not of type int");
-        Value value = exp.eval(symTable);
+        Value value = exp.eval(symTable, heapTable);
         if (!value.getType().equals(new StringType()))
             throw new TypeException(value + " is not a string");
         MyIDictionary<String, BufferedReader> fileTable = state.getFileTable();

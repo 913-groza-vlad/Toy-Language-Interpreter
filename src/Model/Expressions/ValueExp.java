@@ -1,5 +1,6 @@
 package Model.Expressions;
 
+import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.*;
 import Model.ADTstructures.MyIDictionary;
 import Model.Values.*;
@@ -12,7 +13,7 @@ public class ValueExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> symTable) throws MyException{
+    public Value eval(MyIDictionary<String, Value> symTable, MyIHeap heap) throws MyException{
         return e;
     }
 

@@ -25,7 +25,7 @@ public class New implements IStmt{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        Value value = exp.eval(state.getSymTable());
+        Value value = exp.eval(state.getSymTable(), state.getHeap());
         if (!state.getSymTable().isDefined(varName))
             throw new StmtExecException(varName + " is not defined in the SymTable");
         Value varValue = state.getSymTable().lookup(varName);

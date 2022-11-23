@@ -14,7 +14,7 @@ public class ProgramState {
     MyIDictionary<String, BufferedReader> fileTable;
     MyIHeap heapTable;
 
-    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyHeap heapTable, IStmt prg) {
+    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heapTable, IStmt prg) {
         exeStack = stack;
         symTable = symTbl;
         this.out = out;

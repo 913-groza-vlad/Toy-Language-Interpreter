@@ -22,7 +22,7 @@ public class IfStmt implements IStmt {
     }
 
     public ProgramState execute(ProgramState state) throws MyException {
-        Value value = exp.eval(state.getSymTable());
+        Value value = exp.eval(state.getSymTable(), state.getHeap());
         if (value.getType().equals(new BoolType())) {
             BoolValue cond = (BoolValue) value;
             if (cond.getVal())

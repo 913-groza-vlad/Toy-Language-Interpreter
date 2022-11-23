@@ -21,7 +21,7 @@ public class WhileStmt implements IStmt {
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        Value value = exp.eval(state.getSymTable());
+        Value value = exp.eval(state.getSymTable(), state.getHeap());
         if (!value.getType().equals(new BoolType()))
             throw new TypeException("While expression is not boolean");
         BoolValue boolVal = (BoolValue) value;

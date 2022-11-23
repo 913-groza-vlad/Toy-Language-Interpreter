@@ -18,7 +18,7 @@ public class PrintStmt implements IStmt {
 
     public ProgramState execute(ProgramState state) throws MyException {
         // state.getStk().pop();
-        Value val = exp.eval(state.getSymTable());
+        Value val = exp.eval(state.getSymTable(), state.getHeap());
         state.getOut().add(val);
         return state;
     }

@@ -25,7 +25,7 @@ public class OpenRFile implements IStmt {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         MyIDictionary<String, Value> symTable = state.getSymTable();
-        Value value = exp.eval(symTable);
+        Value value = exp.eval(symTable, state.getHeap());
         if (!value.getType().equals(new StringType()))
             throw new TypeException(value + " is not a string");
         MyIDictionary<String, BufferedReader> fileTable = state.getFileTable();

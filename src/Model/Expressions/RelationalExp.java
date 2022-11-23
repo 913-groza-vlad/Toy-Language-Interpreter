@@ -1,6 +1,7 @@
 package Model.Expressions;
 
 import Model.ADTstructures.MyIDictionary;
+import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.ArithmException;
 import Model.Exceptions.MyException;
 import Model.Exceptions.TypeException;
@@ -20,11 +21,11 @@ public class RelationalExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException {
-        Value val1 = exp1.eval(table);
+    public Value eval(MyIDictionary<String, Value> table, MyIHeap heap) throws MyException {
+        Value val1 = exp1.eval(table, heap);
         Value val2;
         if (val1.getType().equals(new IntType())) {
-            val2 = exp2.eval(table);
+            val2 = exp2.eval(table, heap);
             if (val2.getType().equals(new IntType())) {
                 IntValue int1 = (IntValue) val1;
                 IntValue int2 = (IntValue) val2;

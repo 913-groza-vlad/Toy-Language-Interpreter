@@ -11,5 +11,4 @@ public interface MyIHeap {
     Set<Integer> keys();
     Integer add(Value content);
     Integer getFreeLocation();
-
 }

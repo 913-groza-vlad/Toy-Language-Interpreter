@@ -1,5 +1,6 @@
 package Model.Expressions;
 
+import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.MyException;
 import Model.ADTstructures.MyIDictionary;
 import Model.Values.Value;
@@ -12,7 +13,7 @@ public class VarExp implements Exp {
     }
 
     @Override
-    public Value eval(MyIDictionary<String, Value> table) throws MyException {
+    public Value eval(MyIDictionary<String, Value> table, MyIHeap heap) throws MyException {
         return table.lookup(id);
     }
 
