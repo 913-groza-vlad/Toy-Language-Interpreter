@@ -45,4 +45,9 @@ public class MyDictionary<T, T1> implements MyIDictionary<T, T1> {
     public void delete(T id) {
         dict.remove(id);
     }
+
+    @Override
+    public Map<T, T1> getContent() {
+        return dict;
+    }
 }

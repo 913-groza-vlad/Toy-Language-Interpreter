@@ -37,13 +37,13 @@ public class RunExample extends Command {
                 if (option.equals("next")) {
                     try {
                         serv.oneStep(prg);
+                        prg.getHeap().setContent(serv.garbageCollector(serv.getAddrFromSymTable(prg.getSymTable().getContent().values(), prg.getHeap().getContent().values()), prg.getHeap().getContent()));
+                        serv.getPrograms().logPrgStateExec();
                     } catch (MyException e) {
                         System.out.println(e.getMessage());
                     }
-                    try {
-                        serv.getPrograms().logPrgStateExec();
-                    } catch (IOException e) {
-                        System.out.println(e.getMessage());
+                     catch (IOException fe) {
+                        System.out.println("Error on saving the content in the text file");
                     }
                     serv.displayState(prg);
                 } else if (option.equals("0"))

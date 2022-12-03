@@ -52,4 +52,24 @@ public class MyHeap implements MyIHeap{
         freeLocation = newValue();
         return address;
     }
+
+    @Override
+    public void setContent(Map<Integer, Value> collector) {
+        heap.clear();
+        for (Integer k : collector.keySet())
+            heap.put(k, collector.get(k));
+    }
+
+    @Override
+    public Map<Integer, Value> getContent() {
+        return heap;
+    }
+
+    public String toString() {
+        StringBuilder buff = new StringBuilder();
+        for (Integer id : heap.keySet())
+            buff.append("\t   ").append(id).append(" -> ").append(lookup(id)).append("\n");
+        return buff.toString();
+    }
+
 }

@@ -2,6 +2,7 @@ package Model.ADTstructures;
 
 import Model.Values.*;
 
+import java.util.Map;
 import java.util.Set;
 
 
@@ -15,4 +16,6 @@ public interface MyIDictionary<T, T1> {
     Set<T> keys();
 
     void delete(T id);
+
+    Map<T, T1> getContent();
 }

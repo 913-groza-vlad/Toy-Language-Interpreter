@@ -26,7 +26,7 @@ public class RefValue implements Value {
     }
 
     public String toString() {
-        return address + " ->" + locationType.toString();
+        return address + " -> " + locationType.toString();
     }
 
     @Override

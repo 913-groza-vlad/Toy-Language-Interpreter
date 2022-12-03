@@ -3,14 +3,12 @@ package View;
 import Controller.Service;
 import Model.ADTstructures.*;
 import Model.Exceptions.MyException;
-import Model.Expressions.ArithmeticExp;
-import Model.Expressions.RelationalExp;
-import Model.Expressions.ValueExp;
-import Model.Expressions.VarExp;
+import Model.Expressions.*;
 import Model.ProgramState;
 import Model.Statements.*;
 import Model.Types.BoolType;
 import Model.Types.IntType;
+import Model.Types.RefType;
 import Model.Types.StringType;
 import Model.Values.BoolValue;
 import Model.Values.IntValue;
@@ -231,6 +229,25 @@ public class Ui {
                         new AssignStmt("v", new ArithmeticExp(new VarExp("v"), new ValueExp(new IntValue(1)), "-")))), new PrintStmt(new VarExp("v")))));
         Service ctr6 = createRunExample(ogProgram6, "log6.txt");
 
+        // Ref int v; new(v,20); Ref Ref int a; new(a,v); print(rH(v)); print(rH(rH(a))+5)
+        IStmt ogProgram7 = new CompStmt(new VarDeclStmt("v", new RefType(new IntType())), new CompStmt(new New("v", new ValueExp(new IntValue(20))),
+                new CompStmt(new VarDeclStmt("a", new RefType(new RefType(new IntType()))), new CompStmt(new New("a", new VarExp("v")),
+                        new CompStmt(new PrintStmt(new ReadH(new VarExp("v"))), new PrintStmt(new ArithmeticExp(new ReadH(new ReadH(new VarExp("a"))),
+                                new ValueExp(new IntValue(5)), "+")))))));
+        Service ctr7 = createRunExample(ogProgram7, "log7.txt");
+
+        // Ref int v; new(v,20); print(rH(v)); wH(v,30); print(rH(v)+5);
+        IStmt ogProgram8 = new CompStmt(new VarDeclStmt("v", new RefType(new IntType())), new CompStmt(new New("v", new ValueExp(new IntValue(20))),
+                new CompStmt(new PrintStmt(new ReadH(new VarExp("v"))), new CompStmt(new WriteH("v", new ValueExp(new IntValue(30))),
+                        new PrintStmt(new ArithmeticExp(new ReadH(new VarExp("v")), new ValueExp(new IntValue(5)), "+"))))));
+        Service ctr8 = createRunExample(ogProgram8, "log8.txt");
+
+        // Ref int v; new(v,20); Ref Ref int a; new(a,v); new(v,30); print(rH(rH(a)))
+        IStmt wrongEx = new CompStmt(new VarDeclStmt("v", new RefType(new IntType())), new CompStmt(new New("v", new ValueExp(new IntValue(20))),
+                new CompStmt(new VarDeclStmt("a", new RefType(new RefType(new IntType()))), new CompStmt(new New("a", new VarExp("v")),
+                        new CompStmt(new New("v", new ValueExp(new IntValue(30))), new PrintStmt(new ReadH(new ReadH(new VarExp("a")))))))));
+        Service ctr9 = createRunExample(wrongEx, "log9.txt");
+
         TextMenu textMenu = new TextMenu();
         textMenu.addCommand(new ExitCommand("0", "exit"));
         textMenu.addCommand(new RunExample("1", ogProgram1.toString(), ctr1));
@@ -239,6 +256,9 @@ public class Ui {
         textMenu.addCommand(new RunExample("4", ogProgram4.toString(), ctr4));
         textMenu.addCommand(new RunExample("5", ogProgram5.toString(), ctr5));
         textMenu.addCommand(new RunExample("6", ogProgram6.toString(), ctr6));
+        textMenu.addCommand(new RunExample("7", ogProgram7.toString(), ctr7));
+        textMenu.addCommand(new RunExample("8", ogProgram8.toString(), ctr8));
+        textMenu.addCommand(new RunExample("9", wrongEx.toString(), ctr9));
         textMenu.show();
     }
 }

@@ -2,6 +2,7 @@ package Model.ADTstructures;
 
 import Model.Values.Value;
 
+import java.util.Map;
 import java.util.Set;
 
 public interface MyIHeap {
@@ -11,4 +12,6 @@ public interface MyIHeap {
     Set<Integer> keys();
     Integer add(Value content);
     Integer getFreeLocation();
+    void setContent(Map<Integer, Value> collector);
+    Map<Integer, Value> getContent();
 }
