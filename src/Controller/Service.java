@@ -10,11 +10,17 @@ import Repository.IRepository;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Service {
     private final IRepository repo;
+
+    private ExecutorService executor;
 
     public Service(IRepository repo) {
         this.repo = repo;
@@ -28,11 +34,55 @@ public class Service {
         return crtStmt.execute(state);
     }
 
-    public void allStep() throws MyException{
+    public void oneStepForAllPrograms(List<ProgramState> prgList) {
+        /* prgList.forEach(prg -> {
+            try {
+                repo.logPrgStateExec(prg);
+            } catch (IOException e) {
+                System.out.println("Error on saving the content in the text file");
+            }
+            displayState(prg);
+        }); */
+
+        List<Callable<ProgramState>> callList = prgList.stream().
+                map((ProgramState p) -> (Callable<ProgramState>)(p::oneStep)).toList();
+
+        List<ProgramState> newPrgList = null;
+        try {
+            newPrgList = executor.invokeAll(callList).stream().
+                    map(future -> {
+                        try {
+                            return future.get();
+                        }
+                        catch (ExecutionException | InterruptedException ee) {
+                            System.out.println(ee.getMessage());
+                            return null;
+                        }
+                    })
+                    .filter(p -> p != null).toList();
+        }
+        catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
+
+        prgList.addAll(newPrgList);
+        prgList.forEach(prg -> {
+            try {
+                repo.logPrgStateExec(prg);
+            } catch (IOException e) {
+                System.out.println("Error on saving the content in the text file");
+            }
+            displayState(prg);
+        });
+        repo.setProgramList(prgList);
+    }
+
+    /*
+    public void allStep() throws MyException {
         ProgramState prg = repo.getCrtPrg();
         displayState(prg);
         try {
-            repo.logPrgStateExec();
+            repo.logPrgStateExec(prg);
         }
         catch (IOException e) {
             throw new MyException("Error on saving the content in the text file");
@@ -41,7 +91,7 @@ public class Service {
             try {
                 prg = oneStep(prg);
                 prg.getHeap().setContent(garbageCollector(getAddrFromSymTable(prg.getSymTable().getContent().values(), prg.getHeap().getContent().values()), prg.getHeap().getContent()));
-                repo.logPrgStateExec();
+                repo.logPrgStateExec(prg);
             }
             catch (IOException e) {
                 throw new MyException("Error on saving the content in the text file");
@@ -51,12 +101,37 @@ public class Service {
             }
             displayState(prg);
         }
+    } */
+
+    public void allStep() {
+        executor = Executors.newFixedThreadPool(2);
+        List<ProgramState> prgList = removeCompletedPrg(repo.getProgramList());
+        while (prgList.size() > 0) {
+            // ProgramState prgState = prgList.get(0);
+            conservativeGarbageCollector(prgList);
+
+            oneStepForAllPrograms(prgList);
+            prgList = removeCompletedPrg(repo.getProgramList());
+        }
+
+        executor.shutdownNow();
+        repo.setProgramList(prgList);
     }
 
     public Map<Integer, Value> garbageCollector(List<Integer> symTableAddr, Map<Integer, Value> heap){
         return heap.entrySet().stream().
-                filter(e->symTableAddr.contains(e.getKey())).
+                filter(e -> symTableAddr.contains(e.getKey())).
                 collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+    }
+
+    public void conservativeGarbageCollector(List<ProgramState> prgList) {
+        List<List<Integer>> addresses = prgList.stream().
+                map(prg -> getAddrFromSymTable(prg.getSymTable().getContent().values(), prg.getHeap().getContent().values())).toList();
+        List<Integer> allAddresses = new ArrayList<>();
+        for (List<Integer> addrOfList : addresses)
+            allAddresses.addAll(addrOfList);
+
+        prgList.forEach(prg -> prg.getHeap().setContent(garbageCollector(allAddresses, prgList.get(0).getHeap().getContent())));
     }
 
     /*
@@ -95,6 +170,12 @@ public class Service {
 
     public IRepository getPrograms() {
         return repo;
+    }
+
+    List<ProgramState> removeCompletedPrg(List<ProgramState> inPrgList) {
+        return inPrgList.stream().
+                filter(ProgramState::isNotCompleted).
+                collect(Collectors.toList());
     }
 
 }

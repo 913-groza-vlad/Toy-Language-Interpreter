@@ -29,11 +29,11 @@ public class WhileStmt implements IStmt {
             state.getStk().push(this);
             state.getStk().push(inWhileStmt);
         }
-        return state;
+        return null;
     }
 
     public String toString() {
-        return "WHILE (" + exp.toString() + ")";
+        return "(WHILE (" + exp.toString() + ") " + inWhileStmt.toString() + ")";
     }
 
     @Override

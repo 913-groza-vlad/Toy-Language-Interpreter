@@ -32,7 +32,7 @@ public class IfStmt implements IStmt {
         }
         else
             throw new StmtExecException("Conditional expression is not boolean");
-        return state;
+        return null;
     }
 
     @Override

@@ -51,7 +51,7 @@ public class ReadFile implements IStmt {
         catch (IOException e) {
             throw new FileException("Error on reading from file " + fileName);
         }
-        return state;
+        return null;
     }
 
     @Override

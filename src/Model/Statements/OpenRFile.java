@@ -41,7 +41,7 @@ public class OpenRFile implements IStmt {
             throw new FileException("File not found or error on opening file " + fileName);
         }
 
-        return state;
+        return null;
     }
 
     @Override

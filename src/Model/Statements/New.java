@@ -37,7 +37,7 @@ public class New implements IStmt{
         Integer freeLocation = state.getHeap().add(value);
         state.getSymTable().update(varName, new RefValue(freeLocation, locationType));
 
-        return state;
+        return null;
     }
 
     public String toString() {

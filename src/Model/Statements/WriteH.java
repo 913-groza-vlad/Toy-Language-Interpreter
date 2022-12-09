@@ -35,7 +35,7 @@ public class WriteH implements IStmt {
             throw new TypeException("Expression type is not equal with the location type of " + varName);
         heapTable.update(refVarValue.getAddress(), expValue);
 
-        return state;
+        return null;
     }
 
     public String toString() {

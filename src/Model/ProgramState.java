@@ -1,6 +1,7 @@
 package Model;
 
 import Model.ADTstructures.*;
+import Model.Exceptions.MyException;
 import Model.Statements.*;
 import Model.Values.Value;
 
@@ -13,6 +14,13 @@ public class ProgramState {
     IStmt originalProgram;
     MyIDictionary<String, BufferedReader> fileTable;
     MyIHeap heapTable;
+    int id;
+    static int idManager = 1;
+
+    public synchronized void setPrgStateId() {
+        idManager++;
+        id = idManager;
+    }
 
     public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heapTable, IStmt prg) {
         exeStack = stack;
@@ -21,6 +29,7 @@ public class ProgramState {
         this.fileTable = fileTable;
         this.heapTable = heapTable;
         originalProgram = (IStmt) prg.clone();
+        id = 1;
         stack.push(prg);
     }
 
@@ -72,6 +81,19 @@ public class ProgramState {
         heapTable = heap;
     }
 
+    public Boolean isNotCompleted() {
+        if (exeStack.isEmpty())
+            return false;
+        return true;
+    }
+
+    public ProgramState oneStep() throws MyException {
+        if (exeStack.isEmpty())
+            throw new MyException("ProgramState stack is empty");
+        IStmt crtStmt = exeStack.pop();
+        return crtStmt.execute(this);
+    }
+
     public String symTableToString() {
         StringBuilder buff = new StringBuilder();
         for (String id : symTable.keys())
@@ -86,6 +108,6 @@ public class ProgramState {
     }
     @Override
     public String toString() {
-        return "--------------------\n\t- EXE STACK -\n" +  exeStack.toString() + "--------------------\n\t- SYM TABLE -\n" + symTableToString() + "--------------------\n\t- HEAP TABLE -\n" + heapTable.toString() + "--------------------\n\t  - OUT -\n" + out.toString() + "--------------------\n    - FILE TABLE -\n" + fileTableToString() + "--------------------\n";
+        return " -> Program State ID: "+ id + "\n--------------------\n\t- EXE STACK -\n" +  exeStack.toString() + "--------------------\n\t- SYM TABLE -\n" + symTableToString() + "--------------------\n\t- HEAP TABLE -\n" + heapTable.toString() + "--------------------\n\t  - OUT -\n" + out.toString() + "--------------------\n    - FILE TABLE -\n" + fileTableToString() + "--------------------\n";
     }
 }

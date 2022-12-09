@@ -40,7 +40,7 @@ public class CloseRFile implements IStmt {
         }
         fileTable.delete(fileName.getVal());
 
-        return state;
+        return null;
     }
 
     @Override

@@ -3,6 +3,7 @@ package Model.ADTstructures;
 import Model.Values.Value;
 
 import java.io.BufferedReader;
+import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -49,5 +50,13 @@ public class MyDictionary<T, T1> implements MyIDictionary<T, T1> {
     @Override
     public Map<T, T1> getContent() {
         return dict;
+    }
+
+    @Override
+    public MyIDictionary<T, T1> cloneMap() {
+       MyIDictionary<T, T1> dictClone = new MyDictionary<>();
+       for (T k : dict.keySet())
+           dictClone.update(k, dict.get(k));
+       return dictClone;
     }
 }

@@ -21,7 +21,7 @@ public class VarDeclStmt implements IStmt {
         if (symTable.isDefined(name))
             throw new StmtExecException("Variable is already declared");
         symTable.update(name, type.getDefaultValue());
-        return state;
+        return null;
     }
 
     @Override

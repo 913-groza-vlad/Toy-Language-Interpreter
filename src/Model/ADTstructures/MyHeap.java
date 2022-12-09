@@ -15,7 +15,7 @@ public class MyHeap implements MyIHeap{
         freeLocation = 1;
     }
 
-    public Integer newValue() {
+    public Integer newFreeLocation() {
         if (heap.containsKey(freeLocation))
             freeLocation++;
         return freeLocation;
@@ -49,7 +49,7 @@ public class MyHeap implements MyIHeap{
     public Integer add(Value content) {
         heap.put(freeLocation, content);
         Integer address = freeLocation;
-        freeLocation = newValue();
+        freeLocation = newFreeLocation();
         return address;
     }
 

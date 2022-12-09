@@ -6,7 +6,7 @@ import Model.ProgramState;
 public class NopStmt implements IStmt {
 
     public ProgramState execute(ProgramState state) throws MyException {
-        return state;
+        return null;
     }
 
     @Override

@@ -12,7 +12,9 @@ public interface IRepository {
 
     void addPrg(ProgramState prg);
 
-    List<ProgramState> getProgramStates();
+    List<ProgramState> getProgramList();
 
-    void logPrgStateExec() throws IOException;
+    void setProgramList(List<ProgramState> newList);
+
+    void logPrgStateExec(ProgramState prgState) throws IOException;
 }

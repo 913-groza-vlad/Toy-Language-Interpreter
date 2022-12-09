@@ -37,8 +37,8 @@ public class RunExample extends Command {
                 if (option.equals("next")) {
                     try {
                         serv.oneStep(prg);
-                        prg.getHeap().setContent(serv.garbageCollector(serv.getAddrFromSymTable(prg.getSymTable().getContent().values(), prg.getHeap().getContent().values()), prg.getHeap().getContent()));
-                        serv.getPrograms().logPrgStateExec();
+                        //prg.getHeap().setContent(serv.garbageCollector(serv.getAddrFromSymTable(prg.getSymTable().getContent(), prg.getHeap().getContent().values()), prg.getHeap().getContent()));
+                        serv.getPrograms().logPrgStateExec(prg);
                     } catch (MyException e) {
                         System.out.println(e.getMessage());
                     }
@@ -53,12 +53,8 @@ public class RunExample extends Command {
             }
         }
         else if (choice.equals("2")) {
-                try {
-                    serv.allStep();
-                } catch (MyException e) {
-                    System.out.println(e.getMessage());
-                }
-            }
+            serv.allStep();
+        }
         else
             System.out.println("Invalid option");
     }

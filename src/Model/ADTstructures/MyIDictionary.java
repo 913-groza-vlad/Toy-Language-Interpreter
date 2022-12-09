@@ -18,4 +18,6 @@ public interface MyIDictionary<T, T1> {
     void delete(T id);
 
     Map<T, T1> getContent();
+
+    MyIDictionary<T, T1> cloneMap();
 }

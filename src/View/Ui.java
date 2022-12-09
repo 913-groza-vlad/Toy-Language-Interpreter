@@ -137,12 +137,7 @@ public class Ui {
         IRepository repo = new Repository("file.txt");
         serv = new Service(repo);
         serv.addProgramState(prg);
-        try {
-            serv.allStep();
-        }
-        catch (MyException e) {
-            System.out.println(e.getMessage());
-        }
+        serv.allStep();
     }
 
     private void runOneStep(ProgramState prg) {
@@ -248,6 +243,16 @@ public class Ui {
                         new CompStmt(new New("v", new ValueExp(new IntValue(30))), new PrintStmt(new ReadH(new ReadH(new VarExp("a")))))))));
         Service ctr9 = createRunExample(wrongEx, "log9.txt");
 
+        // int v; Ref int a; v=10; new(a,22);
+        // fork(wH(a,30); v=32; print(v); print(rH(a)));
+        // print(v); print(rH(a))
+        IStmt ogProgram9 = new CompStmt(new VarDeclStmt("v", new IntType()), new CompStmt(new VarDeclStmt("a", new RefType(new IntType())),
+                new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(10))), new CompStmt(new New("a", new ValueExp(new IntValue(22))),
+                        new CompStmt(new ForkStmt(new CompStmt(new WriteH("a", new ValueExp(new IntValue(30))), new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(32))),
+                                new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new ReadH(new VarExp("a"))))))),
+                                new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new ReadH(new VarExp("a")))))))));
+        Service ctr10 = createRunExample(ogProgram9, "log10.txt");
+
         TextMenu textMenu = new TextMenu();
         textMenu.addCommand(new ExitCommand("0", "exit"));
         textMenu.addCommand(new RunExample("1", ogProgram1.toString(), ctr1));
@@ -259,6 +264,7 @@ public class Ui {
         textMenu.addCommand(new RunExample("7", ogProgram7.toString(), ctr7));
         textMenu.addCommand(new RunExample("8", ogProgram8.toString(), ctr8));
         textMenu.addCommand(new RunExample("9", wrongEx.toString(), ctr9));
+        textMenu.addCommand(new RunExample("10", ogProgram9.toString(), ctr10));
         textMenu.show();
     }
 }

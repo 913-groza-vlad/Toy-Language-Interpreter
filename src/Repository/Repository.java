@@ -26,16 +26,22 @@ public class Repository implements IRepository{
     }
 
     @Override
-    public List<ProgramState> getProgramStates() {
+    public List<ProgramState> getProgramList() {
         return prgStateList;
     }
 
     @Override
-    public void logPrgStateExec() throws IOException {
+    public void setProgramList(List<ProgramState> newList) {
+        prgStateList.clear();
+        prgStateList.addAll(newList);
+    }
+
+    @Override
+    public void logPrgStateExec(ProgramState prgState) throws IOException {
         PrintWriter logFile = null;
         try {
             logFile = new PrintWriter(new BufferedWriter(new FileWriter(logFilePath, true)));
-            logFile.println(getCrtPrg().toString());
+            logFile.println(prgState.toString());
         }
         catch (IOException e) {
             throw new IOException(e.getMessage());
