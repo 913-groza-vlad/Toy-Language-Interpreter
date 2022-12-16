@@ -25,6 +25,12 @@ public class VarDeclStmt implements IStmt {
     }
 
     @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        typeEnv.update(name, type);
+        return typeEnv;
+    }
+
+    @Override
     public Object clone() {
         try {
             return (VarDeclStmt) super.clone();

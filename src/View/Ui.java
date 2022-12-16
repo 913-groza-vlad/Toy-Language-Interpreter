@@ -250,8 +250,15 @@ public class Ui {
                 new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(10))), new CompStmt(new New("a", new ValueExp(new IntValue(22))),
                         new CompStmt(new ForkStmt(new CompStmt(new WriteH("a", new ValueExp(new IntValue(30))), new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(32))),
                                 new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new ReadH(new VarExp("a"))))))),
-                                new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new ReadH(new VarExp("a")))))))));
+                                        new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new ReadH(new VarExp("a")))))))));
         Service ctr10 = createRunExample(ogProgram9, "log10.txt");
+
+        IStmt ogProgram10 = new CompStmt(new VarDeclStmt("x", new IntType()), new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(13))),
+                new CompStmt(new VarDeclStmt("y", new RefType(new IntType())), new CompStmt(new New("y", new ValueExp(new IntValue(25))),
+                        new CompStmt(new ForkStmt(new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(50))), new PrintStmt(new VarExp("x")))),
+                                new CompStmt(new ForkStmt(new CompStmt(new WriteH("y", new ValueExp(new IntValue(43))), new PrintStmt(new ReadH(new VarExp("y"))))),
+                                        new CompStmt(new PrintStmt(new VarExp("x")), new PrintStmt(new ReadH(new VarExp("y"))))))))));
+        Service ctr11 = createRunExample(ogProgram10, "log11.txt");
 
         TextMenu textMenu = new TextMenu();
         textMenu.addCommand(new ExitCommand("0", "exit"));
@@ -265,6 +272,7 @@ public class Ui {
         textMenu.addCommand(new RunExample("8", ogProgram8.toString(), ctr8));
         textMenu.addCommand(new RunExample("9", wrongEx.toString(), ctr9));
         textMenu.addCommand(new RunExample("10", ogProgram9.toString(), ctr10));
+        textMenu.addCommand(new RunExample("11", ogProgram10.toString(), ctr11));
         textMenu.show();
     }
 }

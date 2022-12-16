@@ -9,6 +9,8 @@ import Model.Exceptions.StmtExecException;
 import Model.Exceptions.TypeException;
 import Model.Expressions.Exp;
 import Model.ProgramState;
+import Model.Types.BoolType;
+import Model.Types.Type;
 import Model.Values.RefValue;
 import Model.Values.Value;
 
@@ -27,6 +29,13 @@ public class ForkStmt implements IStmt {
         newPrgState.setPrgStateId();
         return newPrgState;
     }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        statement.typeCheck(typeEnv.cloneMap());
+        return typeEnv;
+    }
+
     public String toString() {
         return " Fork(" + statement.toString() + ")";
     }

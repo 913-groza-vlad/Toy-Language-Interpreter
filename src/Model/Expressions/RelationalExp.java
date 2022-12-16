@@ -5,7 +5,9 @@ import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.ArithmException;
 import Model.Exceptions.MyException;
 import Model.Exceptions.TypeException;
+import Model.Types.BoolType;
 import Model.Types.IntType;
+import Model.Types.Type;
 import Model.Values.BoolValue;
 import Model.Values.IntValue;
 import Model.Values.Value;
@@ -46,6 +48,20 @@ public class RelationalExp implements Exp {
                 else
                     throw new ArithmException("Invalid operator");
             }
+            else
+                throw new TypeException("Second expression is not an int expression!");
+        }
+        else
+            throw new TypeException("First expression is not an int expression!");
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type type1 = exp1.typeCheck(typeEnv);
+        Type type2 = exp2.typeCheck(typeEnv);
+        if (type1.equals(new IntType())) {
+            if (type2.equals(new IntType()))
+                return new BoolType();
             else
                 throw new TypeException("Second expression is not an int expression!");
         }

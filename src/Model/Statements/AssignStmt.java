@@ -5,6 +5,7 @@ import Model.ADTstructures.MyIDictionary;
 import Model.ADTstructures.MyIStack;
 import Model.Exceptions.MyException;
 import Model.Exceptions.StmtExecException;
+import Model.Exceptions.TypeException;
 import Model.Expressions.Exp;
 import Model.Types.Type;
 import Model.Values.Value;
@@ -36,6 +37,15 @@ public class AssignStmt implements IStmt {
         } else
             throw new StmtExecException("The used variable " + id + " was not declared before");
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeVar = typeEnv.lookup(id);
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (!typeVar.equals(typeExp))
+            throw new TypeException("Assignment: right hand side and left hand side have different types");
+        return typeEnv;
     }
 
     @Override

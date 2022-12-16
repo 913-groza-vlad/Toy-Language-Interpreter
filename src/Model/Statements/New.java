@@ -1,6 +1,7 @@
 package Model.Statements;
 
 
+import Model.ADTstructures.MyIDictionary;
 import Model.Exceptions.MyException;
 import Model.Exceptions.StmtExecException;
 import Model.Exceptions.TypeException;
@@ -38,6 +39,15 @@ public class New implements IStmt{
         state.getSymTable().update(varName, new RefValue(freeLocation, locationType));
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeVar = typeEnv.lookup(varName);
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (!typeVar.equals(new RefType(typeExp)))
+            throw new TypeException("NEW: right hand side and left hand side have different types");
+        return typeEnv;
     }
 
     public String toString() {

@@ -6,6 +6,7 @@ import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.MyException;
 import Model.Exceptions.TypeException;
 import Model.Types.RefType;
+import Model.Types.Type;
 import Model.Values.IntValue;
 import Model.Values.RefValue;
 import Model.Values.Value;
@@ -26,6 +27,16 @@ public class ReadH implements Exp {
             throw new MyException(String.format("Address %d is not a key in the Heap Table", refValue.getAddress()));
 
         return heap.lookup(refValue.getAddress());
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type type = exp.typeCheck(typeEnv);
+        if (type instanceof RefType refType) {
+            return refType.getInner();
+        }
+        else
+            throw new TypeException("The ReadH argument is not a RefType");
     }
 
     public String toString() {

@@ -1,8 +1,10 @@
 package Model.Statements;
 
+import Model.ADTstructures.MyIDictionary;
 import Model.Expressions.Exp;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
+import Model.Types.Type;
 import Model.Values.Value;
 
 public class PrintStmt implements IStmt {
@@ -21,6 +23,12 @@ public class PrintStmt implements IStmt {
         Value val = exp.eval(state.getSymTable(), state.getHeap());
         state.getOut().add(val);
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        exp.typeCheck(typeEnv);
+        return typeEnv;
     }
 
     @Override

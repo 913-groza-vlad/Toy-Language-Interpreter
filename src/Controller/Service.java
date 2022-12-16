@@ -20,7 +20,7 @@ import java.util.stream.Stream;
 public class Service {
     private final IRepository repo;
 
-    private ExecutorService executor;
+    public ExecutorService executor;
 
     public Service(IRepository repo) {
         this.repo = repo;
@@ -109,7 +109,6 @@ public class Service {
         while (prgList.size() > 0) {
             // ProgramState prgState = prgList.get(0);
             conservativeGarbageCollector(prgList);
-
             oneStepForAllPrograms(prgList);
             prgList = removeCompletedPrg(repo.getProgramList());
         }
@@ -172,7 +171,7 @@ public class Service {
         return repo;
     }
 
-    List<ProgramState> removeCompletedPrg(List<ProgramState> inPrgList) {
+    public List<ProgramState> removeCompletedPrg(List<ProgramState> inPrgList) {
         return inPrgList.stream().
                 filter(ProgramState::isNotCompleted).
                 collect(Collectors.toList());

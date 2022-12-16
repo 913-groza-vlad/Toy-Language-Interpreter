@@ -4,6 +4,7 @@ import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.*;
 import Model.ADTstructures.MyIDictionary;
 import Model.Types.BoolType;
+import Model.Types.Type;
 import Model.Values.BoolValue;
 import Model.Values.Value;
 
@@ -36,6 +37,21 @@ public class LogicExp implements Exp{
                 else
                     throw new ArithmException("Invalid operator");
             }
+            else
+                throw new TypeException("Second operand is not a boolean");
+        }
+        else
+            throw new TypeException("First operand is not a boolean");
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type type1, type2;
+        type1 = ex1.typeCheck(typeEnv);
+        type2 = ex2.typeCheck(typeEnv);
+        if (type1.equals(new BoolType())) {
+            if (type2.equals(new BoolType()))
+                return new BoolType();
             else
                 throw new TypeException("Second operand is not a boolean");
         }

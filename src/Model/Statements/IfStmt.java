@@ -1,10 +1,13 @@
 package Model.Statements;
 
+import Model.ADTstructures.MyIDictionary;
 import Model.Exceptions.StmtExecException;
+import Model.Exceptions.TypeException;
 import Model.Expressions.Exp;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Types.BoolType;
+import Model.Types.Type;
 import Model.Values.*;
 
 public class IfStmt implements IStmt {
@@ -33,6 +36,18 @@ public class IfStmt implements IStmt {
         else
             throw new StmtExecException("Conditional expression is not boolean");
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (typeExp.equals(new BoolType())) {
+            thenS.typeCheck(typeEnv.cloneMap());
+            elseS.typeCheck(typeEnv.cloneMap());
+            return typeEnv;
+        }
+        else
+            throw new TypeException("The IF condition is not of Bool type");
     }
 
     @Override

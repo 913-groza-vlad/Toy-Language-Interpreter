@@ -1,10 +1,12 @@
 package Model.Statements;
 
+import Model.ADTstructures.MyIDictionary;
 import Model.Exceptions.MyException;
 import Model.Exceptions.TypeException;
 import Model.Expressions.Exp;
 import Model.ProgramState;
 import Model.Types.BoolType;
+import Model.Types.Type;
 import Model.Values.BoolValue;
 import Model.Values.Value;
 
@@ -30,6 +32,15 @@ public class WhileStmt implements IStmt {
             state.getStk().push(inWhileStmt);
         }
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (!typeExp.equals(new BoolType()))
+            throw new TypeException("While condition is not of bool type");
+        inWhileStmt.typeCheck(typeEnv.cloneMap());
+        return typeEnv;
     }
 
     public String toString() {

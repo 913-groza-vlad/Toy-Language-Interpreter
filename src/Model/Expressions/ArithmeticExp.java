@@ -4,6 +4,7 @@ import Model.ADTstructures.MyIHeap;
 import Model.Exceptions.*;
 import Model.ADTstructures.MyIDictionary;
 import Model.Types.IntType;
+import Model.Types.Type;
 import Model.Values.*;
 
 public class ArithmeticExp implements Exp {
@@ -44,6 +45,21 @@ public class ArithmeticExp implements Exp {
                 throw new TypeException("Second operand is not an integer!");
         } else
             throw new TypeException("First operand is not an integer!");
+    }
+
+    @Override
+    public Type typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type type1, type2;
+        type1 = ex1.typeCheck(typeEnv);
+        type2 = ex2.typeCheck(typeEnv);
+        if (type1.equals(new IntType())) {
+            if (type2.equals(new IntType()))
+                return new IntType();
+            else
+                throw new TypeException("Second operand is not an integer");
+        }
+        else
+            throw new TypeException("First operand is not an integer");
     }
 
     @Override
