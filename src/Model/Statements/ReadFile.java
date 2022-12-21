@@ -7,6 +7,7 @@ import Model.Expressions.Exp;
 import Model.ProgramState;
 import Model.Types.IntType;
 import Model.Types.StringType;
+import Model.Types.Type;
 import Model.Values.IntValue;
 import Model.Values.StringValue;
 import Model.Values.Value;
@@ -52,6 +53,16 @@ public class ReadFile implements IStmt {
             throw new FileException("Error on reading from file " + fileName);
         }
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (!typeExp.equals(new StringType()))
+            throw new TypeException("ReadFile expression is not of String type");
+        if (!typeEnv.lookup(varName).equals(new IntType()))
+            throw new TypeException("ReadFile requires a parameter of int type");
+        return typeEnv;
     }
 
     @Override

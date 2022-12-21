@@ -1,10 +1,13 @@
 package View;
 
 import Controller.Service;
+import Model.ADTstructures.MyDictionary;
+import Model.ADTstructures.MyIDictionary;
 import Model.ADTstructures.MyIStack;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Statements.IStmt;
+import Model.Types.Type;
 
 import java.io.IOException;
 import java.util.List;
@@ -22,6 +25,17 @@ public class RunExample extends Command {
 
     @Override
     public void execute() {
+
+        MyIDictionary<String, Type> typeEnv = new MyDictionary<>();
+        try {
+            ProgramState prg = serv.getPrograms().getProgramList().get(0);
+            prg.getOriginalProgram().typeCheck(typeEnv);
+        }
+        catch (MyException me) {
+            System.out.println(me.getMessage());
+            return;
+        }
+
         System.out.println("\n1 -> execute program step by step");
         System.out.println("2 -> execute all steps of the program\n");
         System.out.print("\t>>> ");
@@ -72,7 +86,6 @@ public class RunExample extends Command {
                     stop = true;
                 else
                     System.out.println("Invalid option");
-
             }
             serv.executor.shutdownNow();
             serv.getPrograms().setProgramList(prgList);

@@ -8,6 +8,7 @@ import Model.Exceptions.TypeException;
 import Model.Expressions.Exp;
 import Model.ProgramState;
 import Model.Types.StringType;
+import Model.Types.Type;
 import Model.Values.StringValue;
 import Model.Values.Value;
 
@@ -42,6 +43,14 @@ public class OpenRFile implements IStmt {
         }
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (!typeExp.equals(new StringType()))
+            throw new TypeException("OpenRFile expression is not of String type");
+        return typeEnv;
     }
 
     @Override

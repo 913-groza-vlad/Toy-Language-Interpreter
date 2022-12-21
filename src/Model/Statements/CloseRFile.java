@@ -46,6 +46,9 @@ public class CloseRFile implements IStmt {
 
     @Override
     public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (!typeExp.equals(new StringType()))
+            throw new TypeException("CloseRFile expression is not of String type");
         return typeEnv;
     }
 

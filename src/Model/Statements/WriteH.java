@@ -7,6 +7,9 @@ import Model.Exceptions.StmtExecException;
 import Model.Exceptions.TypeException;
 import Model.Expressions.Exp;
 import Model.ProgramState;
+import Model.Types.RefType;
+import Model.Types.StringType;
+import Model.Types.Type;
 import Model.Values.RefValue;
 import Model.Values.Value;
 
@@ -36,6 +39,14 @@ public class WriteH implements IStmt {
         heapTable.update(refVarValue.getAddress(), expValue);
 
         return null;
+    }
+
+    @Override
+    public MyIDictionary<String, Type> typeCheck(MyIDictionary<String, Type> typeEnv) throws MyException {
+        Type typeExp = exp.typeCheck(typeEnv);
+        if (!typeEnv.lookup(varName).equals(new RefType(typeExp)))
+            throw new TypeException("Right hand side and left hand side of the WriteHeap operation have different types");
+        return typeEnv;
     }
 
     public String toString() {

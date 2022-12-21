@@ -6,10 +6,7 @@ import Model.Exceptions.MyException;
 import Model.Expressions.*;
 import Model.ProgramState;
 import Model.Statements.*;
-import Model.Types.BoolType;
-import Model.Types.IntType;
-import Model.Types.RefType;
-import Model.Types.StringType;
+import Model.Types.*;
 import Model.Values.BoolValue;
 import Model.Values.IntValue;
 import Model.Values.StringValue;
@@ -172,10 +169,17 @@ public class Ui {
         MyIDictionary<String, BufferedReader> fileTable = new MyDictionary<>();
         MyIList<Value> out = new MyList<>();
         MyIHeap heap = new MyHeap();
-        ProgramState prg1 = new ProgramState(stack, symTable, out, fileTable, heap, program);
-        IRepository repo1 = new Repository(logFile);
-        repo1.addPrg(prg1);
-        return new Service(repo1);
+        MyIDictionary<String, Type> typeEnv = new MyDictionary<>();
+        try {
+            program.typeCheck(typeEnv);
+        }
+        catch (MyException me) {
+            System.out.println(me.getMessage());
+        }
+        ProgramState prg = new ProgramState(stack, symTable, out, fileTable, heap, program);
+        IRepository repo = new Repository(logFile);
+        repo.addPrg(prg);
+        return new Service(repo);
     }
 
     public void mainStart() {
@@ -204,7 +208,7 @@ public class Ui {
         // readFile(varf,varc);print(varc); closeRFile(varf)
         IStmt ogProgram4 = new CompStmt(new VarDeclStmt("varf", new StringType()), new CompStmt(new AssignStmt("varf", new ValueExp(new StringValue("test.in"))),
                 new CompStmt(new OpenRFile(new VarExp("varf")),
-                        new CompStmt(new VarDeclStmt("varc", new IntType()), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
+                        new CompStmt(new VarDeclStmt("varc", new IntType()), new CompStmt(new ReadFile(new VarExp("varc"), "varc"),
                                 new CompStmt(new PrintStmt(new VarExp("varc")), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
                                         new CompStmt(new PrintStmt(new VarExp("varc")), new CloseRFile(new VarExp("varf"))))))))));
         Service ctr4 = createRunExample(ogProgram4, "log4.txt");
@@ -253,6 +257,9 @@ public class Ui {
                                         new CompStmt(new PrintStmt(new VarExp("v")), new PrintStmt(new ReadH(new VarExp("a")))))))));
         Service ctr10 = createRunExample(ogProgram9, "log10.txt");
 
+        // int x; x = 13; Ref(int) y; new(y, 25); Fork(x = 50; print(x));
+        // Fork(WriteHeap(y -> 43); print(ReadHeap(y)));
+        // print(x); print(ReadHeap(y))
         IStmt ogProgram10 = new CompStmt(new VarDeclStmt("x", new IntType()), new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(13))),
                 new CompStmt(new VarDeclStmt("y", new RefType(new IntType())), new CompStmt(new New("y", new ValueExp(new IntValue(25))),
                         new CompStmt(new ForkStmt(new CompStmt(new AssignStmt("x", new ValueExp(new IntValue(50))), new PrintStmt(new VarExp("x")))),
