@@ -22,6 +22,10 @@ public class ProgramState {
         id = idManager;
     }
 
+    public int getPrgStateId() {
+        return id;
+    }
+
     public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heapTable, IStmt prg) {
         exeStack = stack;
         symTable = symTbl;
