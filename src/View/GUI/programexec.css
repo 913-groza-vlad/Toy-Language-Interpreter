@@ -22,3 +22,7 @@
 .button:hover {
     -fx-background-color: linear-gradient(#2A5058, #81a2b3);
 }
+
+.label {
+    -fx-font-weight: bold;
+}
