@@ -40,4 +40,12 @@ public class CompStmt implements IStmt {
             return new CompStmt(first, second);
         }
     }
+
+    public IStmt getFirst() {
+        return this.first;
+    }
+
+    public IStmt getSecond() {
+        return this.second;
+    }
 }

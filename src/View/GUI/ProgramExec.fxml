@@ -45,8 +45,8 @@
         <Label text="    Symbol Table"/>
         <TableView fx:id="symTable">
             <columns>
-                <TableColumn fx:id="addressCol" prefWidth="150.0" text="Address" />
-                <TableColumn fx:id="valueCol" prefWidth="150.0" text="Value" />
+                <TableColumn fx:id="variableCol" prefWidth="150.0" text="Variable" />
+                <TableColumn fx:id="symValueCol" prefWidth="150.0" text="Value" />
             </columns>
         </TableView>
     </VBox>
@@ -55,8 +55,8 @@
         <Label text="    Heap Table"/>
         <TableView fx:id="heapTable">
             <columns>
-                <TableColumn fx:id="variableCol" prefWidth="150.0" text="Address" />
-                <TableColumn fx:id="symValueCol" prefWidth="150.0" text="Value" />
+                <TableColumn fx:id="addressCol" prefWidth="150.0" text="Address" />
+                <TableColumn fx:id="valueCol" prefWidth="150.0" text="Value" />
             </columns>
         </TableView>
     </VBox>

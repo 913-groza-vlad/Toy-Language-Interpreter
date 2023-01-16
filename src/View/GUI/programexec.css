@@ -1,4 +1,10 @@
 
+.root {
+    -fx-background-color: linear-gradient(lightblue, ghostwhite);
+    -fx-border-width: 2px;
+    -fx-border-color: #0a0a59;
+}
+
 .button {
     -fx-text-fill: white;
     -fx-font-family: "Arial";

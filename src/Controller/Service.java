@@ -1,6 +1,8 @@
 package Controller;
 
+import Model.ADTstructures.MyIList;
 import Model.ADTstructures.MyIStack;
+import Model.ADTstructures.MyList;
 import Model.Exceptions.MyException;
 import Model.ProgramState;
 import Model.Statements.IStmt;
@@ -21,6 +23,7 @@ public class Service {
     private final IRepository repo;
 
     public ExecutorService executor;
+    public MyIList<Value> outCopy;
 
     public Service(IRepository repo) {
         this.repo = repo;
@@ -74,6 +77,10 @@ public class Service {
             }
             displayState(prg);
         });
+        outCopy = new MyList<>();
+        for (Value val : repo.getProgramList().get(0).getOut())
+            outCopy.add(val);
+
         repo.setProgramList(prgList);
     }
 
@@ -175,6 +182,19 @@ public class Service {
         return inPrgList.stream().
                 filter(ProgramState::isNotCompleted).
                 collect(Collectors.toList());
+    }
+
+    public void oneStepExec() {
+        executor = Executors.newFixedThreadPool(2);
+        List<ProgramState> programList = removeCompletedPrg(repo.getProgramList());
+        // ProgramState state = programList.get(0);
+
+        conservativeGarbageCollector(programList);
+        oneStepForAllPrograms(programList);
+        programList = removeCompletedPrg(repo.getProgramList());
+
+        executor.shutdownNow();
+        repo.setProgramList(programList);
     }
 
 }
