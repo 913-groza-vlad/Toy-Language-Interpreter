@@ -101,6 +101,41 @@ public class ProgramExamples {
                                         new CompStmt(new PrintStmt(new VarExp("x")), new PrintStmt(new ReadH(new VarExp("y"))))))))));
         programs.add(ogProgram10);
 
+        // Ref int a; new(a,20);
+        // (for(v=0;v<3;v=v+1) fork(print(v);v=v*rh(a)));
+        // print(rh(a))
+        IStmt ogProgram11 = new CompStmt(new VarDeclStmt("a", new RefType(new IntType())), new CompStmt (new VarDeclStmt("v", new IntType()), new CompStmt(new New("a", new ValueExp(new IntValue(20))),
+                                new CompStmt(new ForStmt("v", new ValueExp(new IntValue()), new ValueExp(new IntValue(3)),
+                                        new ArithmeticExp(new VarExp("v"), new ValueExp(new IntValue(1)), "+"),
+                                            new ForkStmt(new CompStmt(new PrintStmt(new VarExp("v")),
+                                                new AssignStmt("v", new ArithmeticExp(new VarExp("v"), new ReadH(new VarExp("a")), "*"))))),
+                                                    new PrintStmt((new ReadH(new VarExp("a"))))))));
+        programs.add(ogProgram11);
+
+        // Ref int v1; Ref int v2; int x;  int q;
+        // new(v1,20);new(v2,30);newLock(x);
+        // fork(   fork(     lock(x);wh(v1,rh(v1)-1);unlock(x)   );
+        // lock(x);wh(v1,rh(v1)*10);unlock(x));newLock(q);
+        // fork(   fork(lock(q);wh(v2,rh(v2)+5);unlock(q));  lock(q);wh(v2,rh(v2)*10);unlock(q));
+        // nop;nop;nop;nop;lock(x);
+        // print(rh(v1)); unlock(x);
+        // lock(q); print(rh(v2)); unlock(q);
+        IStmt ogProgram12 = new CompStmt(new VarDeclStmt("v1", new RefType(new IntType())), new CompStmt(new VarDeclStmt("v2", new RefType(new IntType())),
+                new CompStmt(new VarDeclStmt("x", new IntType()), new CompStmt(new VarDeclStmt("q", new IntType()), new CompStmt(new New("v1", new ValueExp(new IntValue(20))),
+                        new CompStmt(new New("v2", new ValueExp(new IntValue(30))), new CompStmt(new NewLockStmt("x"), new CompStmt(new ForkStmt(new CompStmt(new ForkStmt(
+                                new CompStmt(new LockStmt("x"), new CompStmt(new WriteH("v1", new ArithmeticExp(new ReadH(new VarExp("v1")), new ValueExp(new IntValue(1)), "-")),
+                                        new UnlockStmt("x")))), new CompStmt(new LockStmt("x"),
+                                new CompStmt(new WriteH("v1", new ArithmeticExp(new ReadH(new VarExp("v1")), new ValueExp(new IntValue(10)), "*")), new UnlockStmt("x"))))),
+                                new CompStmt(new NewLockStmt("q"), new CompStmt(new ForkStmt(new CompStmt(new ForkStmt(
+                                        new CompStmt(new LockStmt("q"), new CompStmt(new WriteH("v2", new ArithmeticExp(new ReadH(new VarExp("v2")), new ValueExp(new IntValue(5)), "+")),
+                                                new UnlockStmt("q")))), new CompStmt(new LockStmt("q"),
+                                        new CompStmt(new WriteH("v2", new ArithmeticExp(new ReadH(new VarExp("v2")), new ValueExp(new IntValue(10)), "*")), new UnlockStmt("q"))))),
+                                        new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(), new CompStmt(new NopStmt(),
+                                                new CompStmt(new LockStmt("x"), new CompStmt(new PrintStmt(new ReadH(new VarExp("v1"))),
+                                                        new CompStmt(new UnlockStmt("x"), new CompStmt(new LockStmt("q"),
+                                                                new CompStmt(new PrintStmt(new ReadH(new VarExp("v2"))), new UnlockStmt("q"))))))))))))))))))));
+        programs.add(ogProgram12);
+
         return programs;
     }
 

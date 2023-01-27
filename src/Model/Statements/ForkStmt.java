@@ -25,7 +25,7 @@ public class ForkStmt implements IStmt {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         MyIStack<IStmt> newExeStack = new MyStack<>();
-        ProgramState newPrgState = new ProgramState(newExeStack, state.getSymTable().cloneMap(), state.getOut(), state.getFileTable(), state.getHeap(), statement);
+        ProgramState newPrgState = new ProgramState(newExeStack, state.getSymTable().cloneMap(), state.getOut(), state.getFileTable(), state.getHeap(), state.getLockTable(), statement);
         newPrgState.setPrgStateId();
         return newPrgState;
     }

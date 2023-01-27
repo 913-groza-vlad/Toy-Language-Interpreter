@@ -61,6 +61,16 @@
         </TableView>
     </VBox>
 
+    <VBox GridPane.columnIndex="2" GridPane.rowIndex="4" spacing="3.0">
+        <Label text="    Lock Table"/>
+        <TableView fx:id="lockTable">
+            <columns>
+                <TableColumn fx:id="locationCol" prefWidth="150.0" text="Location" />
+                <TableColumn fx:id="lockValueCol" prefWidth="150.0" text="Value" />
+            </columns>
+        </TableView>
+    </VBox>
+
     <HBox spacing="20" alignment="CENTER" GridPane.rowIndex="5" GridPane.columnIndex="2">
         <Button fx:id="oneStepExecution" text="Next"/>
         <Button fx:id="stopExecution" onAction="#handleStopButtonAction" text="End"/>

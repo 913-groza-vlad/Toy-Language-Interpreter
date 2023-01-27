@@ -14,6 +14,7 @@ public class ProgramState {
     IStmt originalProgram;
     MyIDictionary<String, BufferedReader> fileTable;
     MyIHeap heapTable;
+    ILockTable lockTable;
     int id;
     static int idManager = 1;
 
@@ -26,12 +27,13 @@ public class ProgramState {
         return id;
     }
 
-    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heapTable, IStmt prg) {
+    public ProgramState(MyIStack<IStmt> stack, MyIDictionary<String, Value> symTbl, MyIList<Value> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heapTable, ILockTable lockTable, IStmt prg) {
         exeStack = stack;
         symTable = symTbl;
         this.out = out;
         this.fileTable = fileTable;
         this.heapTable = heapTable;
+        this.lockTable = lockTable;
         originalProgram = (IStmt) prg.clone();
         id = 1;
         stack.push(prg);
@@ -85,6 +87,14 @@ public class ProgramState {
         heapTable = heap;
     }
 
+    public ILockTable getLockTable() {
+        return this.lockTable;
+    }
+
+    public void setLockTable(ILockTable newLockTable) {
+        this.lockTable = newLockTable;
+    }
+
     public Boolean isNotCompleted() {
         if (exeStack.isEmpty())
             return false;
@@ -112,6 +122,6 @@ public class ProgramState {
     }
     @Override
     public String toString() {
-        return " -> Program State ID: "+ id + "\n--------------------\n\t- EXE STACK -\n" +  exeStack.toString() + "--------------------\n\t- SYM TABLE -\n" + symTableToString() + "--------------------\n\t- HEAP TABLE -\n" + heapTable.toString() + "--------------------\n\t  - OUT -\n" + out.toString() + "--------------------\n    - FILE TABLE -\n" + fileTableToString() + "--------------------\n";
+        return " -> Program State ID: "+ id + "\n--------------------\n\t- EXE STACK -\n" +  exeStack.toString() + "--------------------\n\t- SYM TABLE -\n" + symTableToString() + "--------------------\n\t- HEAP TABLE -\n" + heapTable.toString() + "--------------------\n\t  - OUT -\n" + out.toString() + "--------------------\n    - FILE TABLE -\n" + fileTableToString() + "--------------------\n    - LOCK TABLE -\n" + lockTable.toString() + "--------------------\n";
     }
 }

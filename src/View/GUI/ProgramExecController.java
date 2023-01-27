@@ -56,6 +56,13 @@ public class ProgramExecController {
     private TableColumn<Pair<String, Value>, String> variableCol;
     @FXML
     private TableColumn<Pair<String, Value>, String> symValueCol;
+    @FXML
+    private  TableView<Pair<Integer, Integer>> lockTable;
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> locationCol;
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> lockValueCol;
+
 
     private final MyIList<Value> outCopy = new MyList<>();
     /* public void setProgramText(String prgName) {
@@ -78,6 +85,8 @@ public class ProgramExecController {
         valueCol.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().y.toString()));
         variableCol.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().x));
         symValueCol.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().y.toString()));
+        locationCol.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().x.toString()));
+        lockValueCol.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().y.toString()));
 
         oneStepExecution.setOnAction(actionEvent -> {
             try {
@@ -144,6 +153,7 @@ public class ProgramExecController {
         this.populateOut();
         this.populateFileTable();
         this.populateHeap();
+        this.populateLockTable();
     }
 
     private ProgramState getCurrentPrgState() {
@@ -235,6 +245,18 @@ public class ProgramExecController {
         List<Integer> programIds = programStates.stream().map(ProgramState::getPrgStateId).toList();
         prgStatesIds.setItems(FXCollections.observableList(programIds));
         prgStatesNumber.setText(String.valueOf(programStates.size()));
+    }
+
+    private void populateLockTable() {
+        ProgramState prgState = getCurrentPrgState();
+        if (service.getPrograms().getProgramList().size() == 0)
+            return;
+        ILockTable programLockTable = Objects.requireNonNull(prgState).getLockTable();
+        ArrayList<Pair<Integer, Integer>> lockTableList = new ArrayList<>();
+        for(Map.Entry<Integer, Integer> entry: programLockTable.getContent().entrySet()) {
+            lockTableList.add(new Pair<>(entry.getKey(), entry.getValue()));
+        }
+        lockTable.setItems(FXCollections.observableArrayList(lockTableList));
     }
 
 }

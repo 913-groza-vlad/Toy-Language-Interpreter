@@ -60,10 +60,11 @@ public class Ui {
                 MyIDictionary<String, BufferedReader> fileTable = new MyDictionary<>();
                 MyIList<Value> out = new MyList<>();
                 MyIHeap heapTable = new MyHeap();
+                ILockTable lockTable = new LockTable();
                 ProgramState prg = null;
                 if (option.equals("1")) {
                     IStmt ogProgram1 = new CompStmt(new VarDeclStmt("v", new IntType()), new CompStmt(new AssignStmt("v", new ValueExp(new IntValue(2))), new PrintStmt(new VarExp("v"))));
-                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, ogProgram1);
+                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, lockTable, ogProgram1);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -79,7 +80,7 @@ public class Ui {
                                     new ArithmeticExp(new ValueExp(new IntValue(3)), new ValueExp(new IntValue(5)), "*"), "+")),
                                     new CompStmt(new AssignStmt("b",new ArithmeticExp(new VarExp("a"),
                                             new ValueExp(new IntValue(1)), "+")), new PrintStmt(new VarExp("b"))))));
-                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, ogProgram2);
+                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, lockTable, ogProgram2);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -95,7 +96,7 @@ public class Ui {
                                     new CompStmt(new IfStmt(new VarExp("a"), new AssignStmt("v", new ValueExp(
                                             new IntValue(2))), new AssignStmt("v", new ValueExp(new IntValue(3)))), new PrintStmt(
                                             new VarExp("v"))))));
-                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, ogProgram3);
+                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, lockTable, ogProgram3);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -111,7 +112,7 @@ public class Ui {
                                     new CompStmt(new VarDeclStmt("varc", new IntType()), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
                                             new CompStmt(new PrintStmt(new VarExp("varc")), new CompStmt(new ReadFile(new VarExp("varf"), "varc"),
                                                     new CompStmt(new PrintStmt(new VarExp("varc")), new CloseRFile(new VarExp("varf"))))))))));
-                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, ogProgram4);
+                    prg = new ProgramState(stack, symTable, out, fileTable, heapTable, lockTable, ogProgram4);
                     displayOptions();
                     String choice = reader.nextLine();
                     if (choice.equals("1"))
@@ -172,13 +173,14 @@ public class Ui {
         MyIList<Value> out = new MyList<>();
         MyIHeap heap = new MyHeap();
         MyIDictionary<String, Type> typeEnv = new MyDictionary<>();
+        ILockTable lockTable = new LockTable();
         try {
             program.typeCheck(typeEnv);
         }
         catch (MyException me) {
             System.out.println(me.getMessage());
         }
-        ProgramState prg = new ProgramState(stack, symTable, out, fileTable, heap, program);
+        ProgramState prg = new ProgramState(stack, symTable, out, fileTable, heap, lockTable, program);
         IRepository repo = new Repository(logFile);
         repo.addPrg(prg);
         return new Service(repo);
@@ -198,6 +200,8 @@ public class Ui {
         Service ctr9 = createRunExample(programs.get(8), "log9.txt");
         Service ctr10 = createRunExample(programs.get(9), "log10.txt");
         Service ctr11 = createRunExample(programs.get(10), "log11.txt");
+        Service ctr12 = createRunExample(programs.get(11), "log12.txt");
+        Service ctr13 = createRunExample(programs.get(12), "log13.txt");
 
         TextMenu textMenu = new TextMenu();
         textMenu.addCommand(new ExitCommand("0", "exit"));
@@ -212,6 +216,8 @@ public class Ui {
         textMenu.addCommand(new RunExample("9", programs.get(8).toString(), ctr9));
         textMenu.addCommand(new RunExample("10", programs.get(9).toString(), ctr10));
         textMenu.addCommand(new RunExample("11", programs.get(10).toString(), ctr11));
+        textMenu.addCommand(new RunExample("12", programs.get(11).toString(), ctr12));
+        textMenu.addCommand(new RunExample("13", programs.get(12).toString(), ctr13));
         textMenu.show();
     }
 }

@@ -54,6 +54,7 @@ public class ListViewController {
             MyIList<Value> out = new MyList<>();
             MyIHeap heap = new MyHeap();
             MyIDictionary<String, Type> typeEnv = new MyDictionary<>();
+            ILockTable lockTable = new LockTable();
             try {
                 programs.get(index).typeCheck(typeEnv);
             }
@@ -62,7 +63,7 @@ public class ListViewController {
                 alert.showAndWait();
                 return;
             }
-            ProgramState programState = new ProgramState(exeStack, symTable, out, fileTable, heap, programs.get(index));
+            ProgramState programState = new ProgramState(exeStack, symTable, out, fileTable, heap, lockTable, programs.get(index));
             String logFileNr = String.valueOf(index + 1);
             IRepository repository = new Repository("log" + logFileNr + ".txt");
             repository.addPrg(programState);
@@ -81,7 +82,7 @@ public class ListViewController {
                 Stage secondaryStage = new Stage();
                 // programRoot.add(programExecController.getProgramText(), 0, 1);
                 secondaryStage.setTitle("Program Execution");
-                Scene secondaryScene = new Scene(programRoot, 800, 600);
+                Scene secondaryScene = new Scene(programRoot, 900, 700);
                 secondaryScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("programexec.css")).toExternalForm());
                 secondaryStage.setScene(secondaryScene);
                 secondaryStage.show();
