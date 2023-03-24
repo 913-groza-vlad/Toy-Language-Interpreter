@@ -1,0 +1,4330 @@
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(Ref(int) a;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+int v
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(Ref(int) a;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+--------------------
+	- SYM TABLE -
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+Ref(int) a
+--------------------
+	- SYM TABLE -
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+new(a, 20)
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))}
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(int v;(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = 0
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 20
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 40
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(Ref(int) a;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+int v
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(Ref(int) a;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+--------------------
+	- SYM TABLE -
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+Ref(int) a
+--------------------
+	- SYM TABLE -
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+new(a, 20)
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))}
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(int v;(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = 0
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 20
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 40
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+Ref(int) a
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+new(a, 20)
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))}
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(int v;(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = 0
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 20
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 40
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+Ref(int) a
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+new(a, 20)
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))}
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(int v;(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = 0
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 20
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 40
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+Ref(int) a
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+new(a, 20)
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))}
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(int v;(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = 0
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 20
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 40
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+Ref(int) a
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(int v;(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+(new(a, 20);((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a))))
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+new(a, 20)
+--------------------
+	- SYM TABLE -
+	   a -> 0 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+((for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))};print (ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(for (v=0; v<3; v=v + 1) { Fork((print (v);v = v * ReadHeap(a)))}
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(int v;(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+int v
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(v = 0;(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = 0
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 2
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 0
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+( Fork((print (v);v = v * ReadHeap(a)));v = v + 1)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 1
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+ Fork((print (v);v = v * ReadHeap(a)))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 3
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 20
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+v = v + 1
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+(print (v);v = v * ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+(WHILE (v < 3) ( Fork((print (v);v = v * ReadHeap(a)));v = v + 1))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+print (v)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+print (ReadHeap(a))
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+v = v * ReadHeap(a)
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 2
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 1
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 3
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+
+ -> Program State ID: 4
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 1 -> int
+	   v -> 40
+--------------------
+	- HEAP TABLE -
+	   1 -> 20
+--------------------
+	  - OUT -
+		0
+		1
+		2
+		20
+--------------------
+    - FILE TABLE -
+--------------------
+    - LOCK TABLE -
+--------------------
+

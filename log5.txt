@@ -1,0 +1,854 @@
+--------------------
+	- EXE STACK -
+(int a;(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))))
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))))
+int a
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))
+int b
+--------------------
+	- SYM TABLE -
+	   a -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))
+string file
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))
+file = ex5.in
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))
+OpenReadFile(file)
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))
+ReadFile(file, a)
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))
+ReadFile(file, b)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+(IF (a < b) THEN (print (a)) ELSE (print (b)))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+print (b)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+		13
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+		13
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int a;(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))))
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))))
+int a
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))
+int b
+--------------------
+	- SYM TABLE -
+	   a -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))
+string file
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))
+file = ex5.in
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))
+OpenReadFile(file)
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, a);(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))
+ReadFile(file, a)
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, b);((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))
+ReadFile(file, b)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+((IF (a >= b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+(IF (a >= b) THEN (print (a)) ELSE (print (b)))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+print (a)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+		18
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	  - OUT -
+		18
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int a;(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))))
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))))
+int a
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int b;(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))
+int b
+--------------------
+	- SYM TABLE -
+	   a -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(string file;(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))
+string file
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(file = ex5.in;(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> 
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))
+file = ex5.in
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> 
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(file);(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))
+OpenReadFile(file)
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, a);(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))))
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))
+ReadFile(file, a)
+--------------------
+	- SYM TABLE -
+	   a -> 0
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(file, b);((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file)))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))
+ReadFile(file, b)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 0
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+((IF (a < b) THEN (print (a)) ELSE (print (b)));CloseReadFile(file))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+(IF (a < b) THEN (print (a)) ELSE (print (b)))
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+print (b)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(file)
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+		13
+--------------------
+    - FILE TABLE -
+	ex5.in
+--------------------
+
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   a -> 18
+	   b -> 13
+	   file -> ex5.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+		13
+--------------------
+    - FILE TABLE -
+--------------------
+

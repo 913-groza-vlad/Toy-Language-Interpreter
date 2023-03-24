@@ -1,0 +1,1092 @@
+--------------------
+	- EXE STACK -
+(string varf;(varf = test.in;(OpenReadFile(varf);(int varc;(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf)))))))))
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf))))))))
+string varf
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf))))))))
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf)))))))
+varf = test.in
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf)))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int varc;(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf))))))
+OpenReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int varc;(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf)))))
+int varc
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(Read File(varf, varc);(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf)))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf))))
+Read File(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);(Read File(varf, varc);(print (varc);CloseReadFile(varf))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(Read File(varf, varc);(print (varc);CloseReadFile(varf)))
+print (varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(Read File(varf, varc);(print (varc);CloseReadFile(varf)))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);CloseReadFile(varf))
+Read File(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);CloseReadFile(varf))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(varf)
+print (varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+		50
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+		50
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(string varf;(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))))
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+string varf
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+varf = test.in
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+OpenReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+int varc
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+ReadFile(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))
+print (varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);CloseReadFile(varf))
+ReadFile(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);CloseReadFile(varf))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(varf)
+print (varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+		50
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+		50
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+string varf
+--------------------
+	- SYM TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+varf = test.in
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+varf = test.in
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+OpenReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+int varc
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+ReadFile(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))
+print (varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);CloseReadFile(varf))
+ReadFile(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+(print (varc);CloseReadFile(varf))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(varf)
+print (varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+CloseReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+		50
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+--------------------
+	- EXE STACK -
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 50
+--------------------
+	  - OUT -
+		15
+		50
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(string varf;(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))))
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+string varf
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+string varf
+--------------------
+	- SYM TABLE -
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(varf = test.in;(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))))
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+varf = test.in
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+varf = test.in
+--------------------
+	- SYM TABLE -
+	   varf -> 
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(OpenReadFile(varf);(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+OpenReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+OpenReadFile(varf)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(int varc;(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+int varc
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+int varc
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(ReadFile(varf, varc);(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf)))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+ReadFile(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+ReadFile(varf, varc)
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 0
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+ -> Program State ID: 10
+--------------------
+	- EXE STACK -
+(print (varc);(ReadFile(varf, varc);(print (varc);CloseReadFile(varf))))
+--------------------
+	- SYM TABLE -
+	   varf -> test.in
+	   varc -> 15
+--------------------
+	- HEAP TABLE -
+--------------------
+	  - OUT -
+--------------------
+    - FILE TABLE -
+	test.in
+--------------------
+
+
+
