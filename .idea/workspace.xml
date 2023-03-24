@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="58f86429-2c28-4017-8453-4107bee164c1" name="Changes" comment="Update commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2GP2MwgbXOjtwtZFilfGDcBlNtN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Vlad/IdeaProjects/Sem6&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="View" />
+      <recent name="Model" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="ToyLanguageInterpreter" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;I:\MAP\javafx-sdk-19\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58f86429-2c28-4017-8453-4107bee164c1" name="Changes" comment="" />
+      <created>1666275859268</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666275859268</updated>
+      <workItem from="1666275860813" duration="360000" />
+      <workItem from="1666369876067" duration="1055000" />
+      <workItem from="1666455649097" duration="16621000" />
+      <workItem from="1666619288208" duration="5011000" />
+      <workItem from="1666796451560" duration="8487000" />
+      <workItem from="1666860743421" duration="4476000" />
+      <workItem from="1666877459049" duration="1399000" />
+      <workItem from="1666883412682" duration="2330000" />
+      <workItem from="1667165999934" duration="1930000" />
+      <workItem from="1667227791615" duration="2786000" />
+      <workItem from="1667314690554" duration="3313000" />
+      <workItem from="1667672535573" duration="8575000" />
+      <workItem from="1667740269996" duration="9194000" />
+      <workItem from="1667831791877" duration="4181000" />
+      <workItem from="1667846683822" duration="3476000" />
+      <workItem from="1667993345697" duration="362000" />
+      <workItem from="1667993746146" duration="224000" />
+      <workItem from="1668014627579" duration="6161000" />
+      <workItem from="1668096615647" duration="1206000" />
+      <workItem from="1668185257391" duration="7092000" />
+      <workItem from="1668273042322" duration="3425000" />
+      <workItem from="1668436725954" duration="5515000" />
+      <workItem from="1668700779691" duration="2608000" />
+      <workItem from="1668712275441" duration="1853000" />
+      <workItem from="1669130809474" duration="13960000" />
+      <workItem from="1669238100090" duration="3425000" />
+      <workItem from="1669291226779" duration="5569000" />
+      <workItem from="1669564218543" duration="9583000" />
+      <workItem from="1669659754413" duration="762000" />
+      <workItem from="1669733695159" duration="3557000" />
+      <workItem from="1670076349048" duration="1015000" />
+      <workItem from="1670078077348" duration="4770000" />
+      <workItem from="1670243548544" duration="11400000" />
+      <workItem from="1670336113832" duration="635000" />
+      <workItem from="1670337700568" duration="2646000" />
+      <workItem from="1670362082054" duration="1456000" />
+      <workItem from="1670424746857" duration="13799000" />
+      <workItem from="1670450486209" duration="1156000" />
+      <workItem from="1670605737881" duration="7038000" />
+      <workItem from="1670627383670" duration="284000" />
+      <workItem from="1673441659520" duration="221000" />
+      <workItem from="1673441988547" duration="55000" />
+      <workItem from="1673642635158" duration="341000" />
+      <workItem from="1673962766679" duration="146000" />
+      <workItem from="1674326411642" duration="2307000" />
+      <workItem from="1674651560570" duration="3924000" />
+      <workItem from="1674725269441" duration="10885000" />
+      <workItem from="1674802703700" duration="6071000" />
+      <workItem from="1674829782746" duration="1142000" />
+      <workItem from="1677425782079" duration="1582000" />
+      <workItem from="1677701871294" duration="109000" />
+    </task>
+    <task id="LOCAL-00001" summary="Update commit">
+      <created>1667677144315</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1667677144315</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Update commit">
+      <created>1667678235095</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667678235095</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Update commit">
+      <created>1667751096294</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667751096294</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update commit">
+      <created>1668201525532</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668201525532</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Update commit">
+      <created>1668274998474</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668274998474</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update commit">
+      <created>1668275148159</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668275148159</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Update commit">
+      <created>1669152488847</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1669152488847</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Update commit">
+      <created>1669241733610</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1669241733610</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update commit">
+      <created>1670080490433</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670080490433</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Update commit">
+      <created>1670627248637</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670627248637</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Update commit">
+      <created>1674830928177</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674830928177</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update commit" />
+  </component>
+</project>
